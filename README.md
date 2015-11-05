@@ -29,8 +29,4 @@ The second is to use *cat*:
     > EOF
     $
 
-Both techniques will produce a file with the following lines in it:
-
-    line one
-    line two
-    line three
+Both techniques will produce [this file](../1.sh)
