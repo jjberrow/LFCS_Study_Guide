@@ -29,4 +29,4 @@ The second is to use *cat*:
     > EOF
     $
 
-Both techniques will produce [this file](1.sh)
+Both techniques will produce [this file](1.sh).
