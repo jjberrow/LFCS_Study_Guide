@@ -78,3 +78,18 @@ However, sometimes using the absolute path makes more sense:
     $ cd /usr/bin -> absolute
     $ cd ../../usr/bin -> relative
 
+#### Links
+
+The *ln* command can be used to create *hard* links and *soft* links (symlinks). These two kinds of links are very useful in UNIX-based operating systems.
+
+Suppose the **file1** already exists. A hard link, called **file2**, can be created:
+
+`$ ln file1 file2`
+
+Note that two files now appear to existt. However, a closer inspection of the file listing shows that this is not quite true.
+
+    $ ls -li file1 file2
+    187031 -rw-rw-r-- 3 root test1 0 Jun 18 16:57 file1
+    187031 -rw-rw-r-- 3 root test1 0 Jun 18 16:57 file2
+
+The *-i* option to *ls* prints out in the first column the **inode** number, which is a unique quantity for each file object. This is the same for both of these files.
