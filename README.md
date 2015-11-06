@@ -61,3 +61,20 @@ If which doesn't find the program, *whereis* is a good alternative:
 
     $ whereis diff
     diff: /usr/bin/diff /usr/bin/X11/diff /usr/share/man/man1/diff.1.gz
+
+#### Absolute and Relative Paths
+
+There are two ways to identify paths:
+1. *Absolute pathname*: An absolute pathname begins with the root directory and follows the tree, branch by branch, until it reaches the desired directory or file. Absolute paths start with a /.
+2. *Relative pathname*: A relative pathname starts from the present working directory. Relative paths never start with a /.
+
+Most of the time, using the relative path is simpler:
+
+    $ cd ~ -> navigates to home directory of user
+    $ cd ../ -> navigates to branch above
+
+However, sometimes using the absolute path makes more sense:
+
+    $ cd /usr/bin -> absolute
+    $ cd ../../usr/bin -> relative
+
