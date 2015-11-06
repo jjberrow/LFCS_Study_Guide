@@ -41,3 +41,23 @@ If your system does not already have sudo set up and enabled, you need to do the
 Some distributions will complain if you don't also change permissions on the file by doing:
 
 `# chmod 440 /etc/sudoers.d/student`
+
+#### Locating Applications
+
+In general, executable programs should live in the following directories:
+
+    /bin
+    /usr/bin
+    /sbin
+    /usr/sbin
+    /opt
+
+One way of locating programs is to employ the *which* utility. For example:
+
+    $ which diff
+    /usr/bin/diff
+
+If which doesn't find the program, *whereis* is a good alternative:
+
+    $ whereis diff
+    diff: /usr/bin/diff /usr/bin/X11/diff /usr/share/man/man1/diff.1.gz
