@@ -159,4 +159,16 @@ The UNIX/Linux philosophy is to have many simple and short programs (or commands
 
 The above represents what we often call a **pipeline** and allows Linux to combine the actions of several commands into one. This is extraordinarily efficient because **command2** and **command3** do not have to wait for the previous pipeline commands to complete before they can begin hacking at the data in their input streams; on multi-core systems the available computing power is much better utilized and things get done quicker. In addition there is no need to save output in (temporary) files between the stages in the pipeline, which saves disk space and reduces reading and writing from disk, which is often the slowest bottleneck in getting something done.
 
+#### locate
+
+The **locate** utility program performs a search through a previously constructed database of files and directories on your system, matching all entries that contain a specified character string. This can sometimes result in a very long list.
+
+To get a shorter more relevant list we can use the **grep** program as a filter; **grep** will print only the lines that contain one or more specified string as in:
+
+`$ locate zip | grep bin`
+
+which will list all files and directories with both "zip" and "bin" in their name. Notice the use of the pipe to chain the commands together.
+
+**locate** utilizes the database created by another program, **updatedb**. Most Linux systems run this automatically once a day. However, you can update it at any time by just running the **updatedb** command from the command line as the root user.
+
 
