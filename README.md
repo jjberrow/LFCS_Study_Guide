@@ -2,6 +2,24 @@
 
 This is imperfect studying material. It is solely designed for assisting in breaking down the domains and competencies defined on the Linux Foundation's website.
 
+* [Command Line](#command-line)
+  * [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
+  * [sudo](#sudo)
+* [Filesystem &amp; storage](#filesystem--storage)
+  * [Locating Applications](#locating-applications)
+  * [Absolute and Relative Paths](#absolute-and-relative-paths)
+  * [Links](#links)
+  * [Standard File Streams](#standard-file-streams)
+  * [I/O Redirection](#io-redirection)
+  * [Pipes](#pipes)
+  * [locate](#locate)
+  * [Wildcards and Matching File Names](#wildcards-and-matching-file-names)
+  * [Finding Files in a Directory](#finding-files-in-a-directory)
+  * [Using find](#using-find)
+  * [Using Advanced find Options](#using-advanced-find-options)
+  * [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
+
+
 ### Command Line
 #### Creating Files Without Using an Editor
 
