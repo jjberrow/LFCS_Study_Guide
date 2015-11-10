@@ -19,6 +19,7 @@ This is imperfect studying material. It is solely designed for assisting in brea
 * [Viewing Files](#viewing-files)
 * [touch and mkdir](#touch-and-mkdir)
 * [Removing a File](#removing-a-file)
+* [Renaming or Removing a Directory](#renaming-or-removing-a-directory)
 
 
 #### Creating Files Without Using an Editor
@@ -330,4 +331,17 @@ Removing a directory is simply done with **rmdir**. The directory must be empty 
 | **rm** | Remove a file |
 | **rm -f** | Forcefully remove a file |
 | **rm -i** | Interactively remove a file (prompt user for confirmation) |
+
+#### Renaming or Removing a Directory
+
+**rmdir** works only on empty directories.
+
+While typing rm -rf is a fast and easy way to remove a whole filesystem tree recursively, it is extremely dangerous and should be used with the utmost care, especially when used by root.
+
+| Command | Usage |
+|:--------|:------|
+| **mv** | Rename a directory |
+| **rmdir** | Remove an empty directory |
+| **rm -rf** | Forcefully remove a directory recursively |
+
 
