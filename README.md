@@ -2,21 +2,22 @@
 
 This is imperfect studying material. It is solely designed for assisting in breaking down the domains and competencies defined on the Linux Foundation's website.
 
-  * [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
-  * [sudo](#sudo)
-  * [Locating Applications](#locating-applications)
-  * [Absolute and Relative Paths](#absolute-and-relative-paths)
-  * [Links](#links)
-  * [Standard File Streams](#standard-file-streams)
-  * [I/O Redirection](#io-redirection)
-  * [Pipes](#pipes)
-  * [locate](#locate)
-  * [Wildcards and Matching File Names](#wildcards-and-matching-file-names)
-  * [Finding Files in a Directory](#finding-files-in-a-directory)
-  * [Using find](#using-find)
-  * [Using Advanced find Options](#using-advanced-find-options)
-  * [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
-  * [Viewing Files](#viewing-files)
+* [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
+* [sudo](#sudo)
+* [Locating Applications](#locating-applications)
+* [Absolute and Relative Paths](#absolute-and-relative-paths)
+* [Links](#links)
+* [Standard File Streams](#standard-file-streams)
+* [I/O Redirection](#io-redirection)
+* [Pipes](#pipes)
+* [locate](#locate)
+* [Wildcards and Matching File Names](#wildcards-and-matching-file-names)
+* [Finding Files in a Directory](#finding-files-in-a-directory)
+* [Using find](#using-find)
+* [Using Advanced find Options](#using-advanced-find-options)
+* [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
+* [Viewing Files](#viewing-files)
+* [touch and mkdir](#touch-and-mkdir)
 
 
 #### Creating Files Without Using an Editor
@@ -286,3 +287,36 @@ You can use the following utilities to view files:
 | **tail** | Used to pring the last 10 lines of a file by default. You can change the number of lines by doing *-n 15* of just *-15* if you wanted to look at the last 15 lines instead of the default |
 | **head** | The opposite of **tail**; by default it prints the first 10 lines of a file |
 
+#### touch and mkdir
+
+**touch** is often used to set or update the access, change, and modify times of files. By default it resets a file's time stamp to match the current time.
+
+It can also be used to create an empty file:
+
+`$ touch <filename>`
+
+This is normally done to create an empty file as a placeholder for a later purpose.
+
+The *-t* option allows you to set the date and timestamp of the file.
+
+To set the time stamp to a specific time:
+
+`$ touch -t 03201600 myfile`
+
+This sets *myfile*'s time stamp to 4 pm, March 20th (03 20 1600).
+
+**mkdir** is used to create a directory.
+
+To create a sample directory called sampdir under the current directory:
+
+`$ mkdir sampdir`
+
+To create a sample directory called sampdir under /usr:
+
+`$ mkdir /usr/sampdir`
+
+To create a sample directory called sampdir under the current directory with a sub-directory called subsamp:
+
+`$ mkdir -p sampdir/subsamp`
+
+Removing a directory is simply done with **rmdir**. The directory must be empty or it will fail. To remove a directory and all of its cont4ents you have to do *rm -rf*.
