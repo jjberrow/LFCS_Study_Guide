@@ -18,6 +18,7 @@ This is imperfect studying material. It is solely designed for assisting in brea
 * [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
 * [Viewing Files](#viewing-files)
 * [touch and mkdir](#touch-and-mkdir)
+* [Removing a File](#removing-a-file)
 
 
 #### Creating Files Without Using an Editor
@@ -320,3 +321,13 @@ To create a sample directory called sampdir under the current directory with a s
 `$ mkdir -p sampdir/subsamp`
 
 Removing a directory is simply done with **rmdir**. The directory must be empty or it will fail. To remove a directory and all of its cont4ents you have to do *rm -rf*.
+
+#### Removing a file
+
+| Command | Usage |
+|:--------|:------|
+| **mv** | Rename a file |
+| **rm** | Remove a file |
+| **rm -f** | Forcefully remove a file |
+| **rm -i** | Interactively remove a file (prompt user for confirmation) |
+
