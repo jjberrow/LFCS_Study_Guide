@@ -2,10 +2,8 @@
 
 This is imperfect studying material. It is solely designed for assisting in breaking down the domains and competencies defined on the Linux Foundation's website.
 
-* [Command Line](#command-line)
   * [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
   * [sudo](#sudo)
-* [Filesystem &amp; storage](#filesystem--storage)
   * [Locating Applications](#locating-applications)
   * [Absolute and Relative Paths](#absolute-and-relative-paths)
   * [Links](#links)
@@ -20,7 +18,6 @@ This is imperfect studying material. It is solely designed for assisting in brea
   * [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
 
 
-### Command Line
 #### Creating Files Without Using an Editor
 
 There are two standard ways to create a file directly from the command line and fill it with content.
@@ -60,7 +57,6 @@ Some distributions will complain if you don't also change permissions on the fil
 
 `# chmod 440 /etc/sudoers.d/student`
 
-### Filesystem & storage
 #### Locating Applications
 
 In general, executable programs should live in the following directories:
