@@ -2,23 +2,6 @@
 
 This is imperfect studying material. It is solely designed for assisting in breaking down the domains and competencies defined on the Linux Foundation's website.
 
-- [LFCS Study Guide](#)
-    - [Command Line](#)
-      - [Creating Files Without Using an Editor](#)
-      - [sudo](#)
-      - [Locating Applications](#)
-      - [Absolute and Relative Paths](#)
-      - [Links](#)
-      - [Standard File Streams](#)
-      - [I/O Redirection](#)
-      - [Pipes](#)
-      - [locate](#)
-      - [Wildcards and Matching File Names](#)
-      - [Finding Files in a Directory](#)
-      - [Using find](#)
-      - [Using Advanced find Options](#)
-      - [Finding Files Based on Time and Size](#)
-
 ### Command Line
 #### Creating Files Without Using an Editor
 
