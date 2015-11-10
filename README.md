@@ -111,4 +111,44 @@ Hard links are very useful and they save space, but you have to be careful with 
 
 If you edit one of the files, exactly what happens depends on your editor; most editors including **vi** and **gedit** will retain the link *by default* but it is possible that modifying one of the names may break the link and result in the creation of two objects.
 
+#### Standard File Streams
+
+When commands are executed, by default there are three standard **file streams** always open for use:
+
+* **standard input** or stdin
+* **standard output** or stdout
+* **standard error** or stderr
+
+Usually stdin in your keyboard, stdout and stderr are printed on your terminal; often stderr is redirected to an error logging file. stdin is often supplied by directing input to come from a file or from the output of a previous command through a **pipe**. stdout is often redirected into a file. Since stderr is where error messages are written, often nothing will go there.
+
+In Linux, all open files are represented internally by what are called **file descriptors**. Simply put, these are represented by numbers starting at zero.
+
+* stdin -> 0
+* stdout -> 1
+* stderr -> 2
+
+Typically, if other files are opened in addition to these three, which are opened by default, they will start at file descriptor 3 and increase from there.
+
+#### I/O Redirection
+
+Throught the command shell we can redirect the three standard file streams so that we can get input from either a file or another command instead of from our keyboard, and we can write output and errors to files or send them as input for subsequent commands.
+
+For example, if we have a program called **do_something** that reads from stdin and writes to stdout and stderr, we can change ints input source by using the **<** sign followed by the name of the file to be consumed for input data:
+
+`$ do_something < input-file`
+
+If you want to send the output to a file, use the **>** sign:
+
+`$ do_something > output-file`
+
+Because stderr is not the same as stdout, error messages will still be seen on the terminal windows in the above example.
+
+If you want to redirect stderr to a separate file, you use the stderr's file descriptor number (2) and the **>** sign, followed by the name of the file you want to hold everything the running commmand writes to stderr:
+
+`$ do_something 2> error-file`
+
+A special shorthand notation can be used to put anything written to file descriptor 2 in the same place as file descriptor 1: 2>&1
+
+`$ do_something > all-output-file 2>&1`
+
 
