@@ -16,6 +16,7 @@ This is imperfect studying material. It is solely designed for assisting in brea
   * [Using find](#using-find)
   * [Using Advanced find Options](#using-advanced-find-options)
   * [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
+  * [Viewing Files](#viewing-files)
 
 
 #### Creating Files Without Using an Editor
@@ -273,4 +274,15 @@ For example, to find files greater than 10MB in size and running a command on th
 
 `$ find / -size +10M -exec command {} ';'`
 
+#### Viewing Files
+
+You can use the following utilities to view files:
+
+| Command | Usage |
+|:--------|:------|
+| **cat** | Used for viewing files that are not very long; it does not provide any scroll-back |
+| **tac** | Used to look at a file backwards, starting with the last line |
+| **less** | Used to view larger files because it is a paging program; it pauses at each screenful of text, provides scroll-back capabilities, and lets you search and navigate within the file |
+| **tail** | Used to pring the last 10 lines of a file by default. You can change the number of lines by doing *-n 15* of just *-15* if you wanted to look at the last 15 lines instead of the default |
+| **head** | The opposite of **tail**; by default it prints the first 10 lines of a file |
 
