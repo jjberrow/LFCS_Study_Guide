@@ -171,4 +171,21 @@ which will list all files and directories with both "zip" and "bin" in their nam
 
 **locate** utilizes the database created by another program, **updatedb**. Most Linux systems run this automatically once a day. However, you can update it at any time by just running the **updatedb** command from the command line as the root user.
 
+#### Wildcards and Matching File Names
 
+You can search for a filename containing specific characters using **wildcards**.
+
+| Wildcard |      Result      |
+|:---------|-----------------:|
+| ? | Matches any single character |
+| * | Matches any string of characters |
+| [set] | Matches any character in the set of characters, for example [adf] will match any occurance of "a", "d" or "f" |
+| [!set] | Matches any character not in the set of characters |
+
+To search for files using the **?** wildcard, replace each unknown **character** with *?*, e.g. if you know only the first 2 letters are 'ba' of a 3-letter filename with an extension of .out:
+
+`$ ls ba?.out`
+
+To search for files using the * wildcard, replace the unknown string with  * , e.g. if you remember only that the extention was .out:
+
+`$ ls *.out`  
