@@ -176,7 +176,7 @@ which will list all files and directories with both "zip" and "bin" in their nam
 You can search for a filename containing specific characters using **wildcards**.
 
 | Wildcard |      Result      |
-|:---------|-----------------:|
+|:---------|:-----------------|
 | ? | Matches any single character |
 | * | Matches any string of characters |
 | [set] | Matches any character in the set of characters, for example [adf] will match any occurance of "a", "d" or "f" |
