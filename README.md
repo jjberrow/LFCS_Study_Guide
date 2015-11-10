@@ -86,10 +86,29 @@ Suppose the **file1** already exists. A hard link, called **file2**, can be crea
 
 `$ ln file1 file2`
 
-Note that two files now appear to existt. However, a closer inspection of the file listing shows that this is not quite true.
+Note that two files now appear to exist. However, a closer inspection of the file listing shows that this is not quite true.
 
     $ ls -li file1 file2
     187031 -rw-rw-r-- 3 root test1 0 Jun 18 16:57 file1
     187031 -rw-rw-r-- 3 root test1 0 Jun 18 16:57 file2
 
-The *-i* option to *ls* prints out in the first column the **inode** number, which is a unique quantity for each file object. This is the same for both of these files.
+The *-i* option to *ls* prints out in the first column the **inode** number, which is a unique quantity for each file object. This is the same for both of these files. 
+
+**Symbolic** or soft links are created with the *-s* option as in:
+
+    $ ln -s file1 file4
+    $ ls -li file1 file4
+    187931 -rw-rw-r-- 2 root  test1 0 Jun 18 16:57 file1
+    131287 lrwxrwxrwx 1 test1 test1 5 Jun 21 17:18 file4 -> file1
+
+Notice file4 no longer appears to be a regular file, and it clearly points to file1 and has a different inode number.
+
+Symbolic links take no extra space on the filesystem. They are extrememly convenient as they can easily be modified to point to different places. An easy way to create a shortcut from your *home* directory to long pathnames is to create a symbolic link.
+
+Unlike hard links, soft links can point to objects even on different filesystems (or partitions) which may or may not be currently available or even exist. In the case where the link does not point to a currently available or existing object, you obtain a **dangling** link.
+
+Hard links are very useful and they save space, but you have to be careful with their use, sometimes in subtle ways. For one thing if you remove either file1 or file2 in the previous example, the **inode object** (and the remaining file name) will remain, which might be undesirable as it may lead to subtle errors later if you recreate a file of that name.
+
+If you edit one of the files, exactly what happens depends on your editor; most editors including **vi** and **gedit** will retain the link *by default* but it is possible that modifying one of the names may break the link and result in the creation of two objects.
+
+
