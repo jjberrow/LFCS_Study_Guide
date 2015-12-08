@@ -389,4 +389,28 @@ There are a number of RAID specifications of increasing complexity and use. The 
 * **RAID 6** has striped disks with dual parity; it can handle loss of two disks, and requires at least 4 disks. Because RAID 5 can impose significant stress on disks, which can lead to failures during revocery procedures, RAID 6 has become more important.
 * **RAID 10** is a mirrored and striped data set. It can be viewed as RAID 1 + 0. At least 4 drives are needed.
 
+#### Software RAID Configuration
 
+The steps in configuring software RAID are:
+
+1. Create partitions on each disk
+2. Create RAID device with **mdadm**
+3. Format RAID device
+4. Add device to /etc/fstab
+5. Mount RAID device
+6. Capture RAID details to ensure persistence
+
+For example:
+
+1. Create partitions on each disk
+
+    $ sudo fdisk /dev/sdb
+    $ sudo fdisk /dev/sdc
+
+2. Create RAID device with mdadm
+
+    $ sudo mdadm --create /dev/md0 --level=1 --raid-disks=2 /dev/sdb3 /dev/sdc3
+
+3. Format RAID device
+
+    $ sudo mkfs.ext3 /dev/md0
