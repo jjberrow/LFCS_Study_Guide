@@ -361,6 +361,7 @@ This could prove useful if you are working in multiple roles and want to be alwa
 
 ### Chapter 2
 * [Introduction to RAID](#introduction-to-raid)
+* [RAID Levels](#raid-levels)
 
 #### Introduction to RAID
 
@@ -377,3 +378,15 @@ Three essential features of RAID are:
 * **parity**: extra data is stored to allow problem detection and repair, yielding fault tolerance.
 
 Thus, the use of RAID can improve both performance and reliability.
+
+#### RAID Levels
+
+There are a number of RAID specifications of increasing complexity and use. The most commonly used levels are 0 ,1, and 5.
+
+* **RAID 0** uses only striping. Data is spread across multiple disks. There is no redundancy and there is no stability or recovery capabilities. If any disk fails, data will be lost. Performance is improved significantly because of paraleelization of I/O tasks.
+* **RAID 1** uses only mirroring; each disk has a duplicate. This is good for recovery. At least two disks are required.
+* **RAID 5** uses a rotating parity stripe; a single drive failure will not cause loss of data, only a performance drop. There must be at least 3 disks.
+* **RAID 6** has striped disks with dual parity; it can handle loss of two disks, and requires at least 4 disks. Because RAID 5 can impose significant stress on disks, which can lead to failures during revocery procedures, RAID 6 has become more important.
+* **RAID 10** is a mirrored and striped data set. It can be viewed as RAID 1 + 0. At least 4 drives are needed.
+
+
