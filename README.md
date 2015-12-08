@@ -20,6 +20,7 @@ This is imperfect studying material. It is solely designed for assisting in brea
 * [touch and mkdir](#touch-and-mkdir)
 * [Removing a File](#removing-a-file)
 * [Renaming or Removing a Directory](#renaming-or-removing-a-directory)
+* [Modifying the Command Line Prompt] (#modifying-the-command-line-prompt)
 
 
 #### Creating Files Without Using an Editor
@@ -343,5 +344,15 @@ While typing rm -rf is a fast and easy way to remove a whole filesystem tree rec
 | **mv** | Rename a directory |
 | **rmdir** | Remove an empty directory |
 | **rm -rf** | Forcefully remove a directory recursively |
+
+#### Modifying the Command Line Prompt
+
+The **PS1** variable is the character string that is displayed as the prompt on the command line. Most distributions set PS1 to a known default value. Some system administrators require the user and host system name to show up on the command line as in:
+
+`studen@quad32 $`
+
+This could prove useful if you are working in multiple roles and want to be always reminded of who you are and what machine you are on. The prompt above could be implemented by setting the PS1 variable to: 
+
+`\u@\h $`
 
 
