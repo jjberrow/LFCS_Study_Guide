@@ -360,4 +360,20 @@ This could prove useful if you are working in multiple roles and want to be alwa
 `\u@\h $`
 
 ### Chapter 2
+* [Introduction to RAID](#introduction-to-raid)
 
+#### Introduction to RAID
+
+**RAID** (Redundant Array of Independent Disks) spreads I/O over multiple disks. This can really increase performance in modern disk controller interfaces.
+
+RAID can be implemented either in software (it is a mature part of the Linux kernel) or in hardware. If your hardware RAID is known to be of good quality, it should be more efficient than using software RAID. With the hardware implementation, the operating system is unaware that RAID is in use. For example, three 512 GB hard drives (two for data, one for parity) configured with **RAID-5** will just look like a single 1 TB disk.
+
+One disadvantage of using hardware RAID is that if the disk controller fails, it must be replaced by a compatible controller which may not be easy to obtain. When using software RAID, the same disks can be attached to and work with any disk controller. Such considerations are more likely to be relevant for low and mid-range hardware.
+
+Three essential features of RAID are:
+
+* **mirroring**: writing the same data to more than one disk.
+* **striping**: splitting of data to more than one disk.
+* **parity**: extra data is stored to allow problem detection and repair, yielding fault tolerance.
+
+Thus, the use of RAID can improve both performance and reliability.
