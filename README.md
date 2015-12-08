@@ -2,25 +2,29 @@
 
 This is imperfect studying material. It is solely designed for assisting in breaking down the domains and competencies defined on the Linux Foundation's website.
 
-* [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
-* [sudo](#sudo)
-* [Locating Applications](#locating-applications)
-* [Absolute and Relative Paths](#absolute-and-relative-paths)
-* [Links](#links)
-* [Standard File Streams](#standard-file-streams)
-* [I/O Redirection](#io-redirection)
-* [Pipes](#pipes)
-* [locate](#locate)
-* [Wildcards and Matching File Names](#wildcards-and-matching-file-names)
-* [Finding Files in a Directory](#finding-files-in-a-directory)
-* [Using find](#using-find)
-* [Using Advanced find Options](#using-advanced-find-options)
-* [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
-* [Viewing Files](#viewing-files)
-* [touch and mkdir](#touch-and-mkdir)
-* [Removing a File](#removing-a-file)
-* [Renaming or Removing a Directory](#renaming-or-removing-a-directory)
-* [Modifying the Command Line Prompt] (#modifying-the-command-line-prompt)
+* [Chapter 1](#chapter-1)
+* [Chapter 2](#chapter-2
+
+### Chapter 1
+	* [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
+	* [sudo](#sudo)
+	* [Locating Applications](#locating-applications)
+	* [Absolute and Relative Paths](#absolute-and-relative-paths)
+	* [Links](#links)
+	* [Standard File Streams](#standard-file-streams)
+	* [I/O Redirection](#io-redirection)
+	* [Pipes](#pipes)
+	* [locate](#locate)
+	* [Wildcards and Matching File Names](#wildcards-and-matching-file-names)
+	* [Finding Files in a Directory](#finding-files-in-a-directory)
+	* [Using find](#using-find)
+	* [Using Advanced find Options](#using-advanced-find-options)
+	* [Finding Files Based on Time and Size](#finding-files-based-on-time-and-size)
+	* [Viewing Files](#viewing-files)
+	* [touch and mkdir](#touch-and-mkdir)
+	* [Removing a File](#removing-a-file)
+	* [Renaming or Removing a Directory](#renaming-or-removing-a-directory)
+	* [Modifying the Command Line Prompt] (#modifying-the-command-line-prompt)
 
 
 #### Creating Files Without Using an Editor
@@ -355,4 +359,4 @@ This could prove useful if you are working in multiple roles and want to be alwa
 
 `\u@\h $`
 
-
+### Chapter 2
