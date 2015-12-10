@@ -3,6 +3,7 @@
 ### Chapter 4
 * [File Ownership](#file-ownership)
 * [File Permission Modes](#file-permission-modes)
+* [chown](#chown)
 
 #### File Ownership
 
@@ -48,4 +49,19 @@ To achieve the same as above, you could do:
     $ ls -l test1
     -rwxr--r-x 1 coop coop 1601 Mar 9 15:04 test1
 
+#### chown
 
+Using chown is pretty straitforward. The syntax is as follows:
+
+    $ sudo chown [user]:[group] file
+
+The *[group]* option is completely optional, and can be completely ignored if *chgrp* is implemented for group ownership changes.
+
+If we have a file owned by *bob* and we want to change the owner to *sally*, we could do:
+
+    $ ls -l test1
+    -rw-rw-r-- 1 bob bob 0 Mar 15 16:04 test1
+
+    $ sudo chown sally test1
+    $ ls -l test1
+    -rw-rw-r-- 1 sally bob 0 Mar 15 16:04 test1
