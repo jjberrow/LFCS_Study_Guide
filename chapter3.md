@@ -3,6 +3,7 @@
 ### Chapter 3
 * [LUKS](#luks)
 * [Using an Encrypted Partition](#using-an-encrypted-partition)
+* [Mounting at boot](#mounting-at-boot)
 
 #### LUKS
 
@@ -43,3 +44,14 @@ and then use it as if it was unencrypted. When you are done, unmount it:
 and then remove the mapper association:
 
     $ sudo cryptsetup --verbose luksClose SECRET
+
+#### Mounting at boot
+
+To mount an encrypted partition at boot, two conditions must be satisfied:
+
+1. Make an appropriate entry in /etc/fstab
+2. Add an entry to /etc/crypttab
+
+Typically, the entry will look something like:
+
+    SECRET /dev/mapper/MYSECRET
