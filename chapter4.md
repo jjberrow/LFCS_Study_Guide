@@ -5,6 +5,7 @@
 * [File Permission Modes](#file-permission-modes)
 * [chown](#chown)
 * [chgrp](#chgrp)
+* [Extended Attributes](#extended-attributes)
 
 #### File Ownership
 
@@ -78,4 +79,19 @@ chgrp is almost identical to chown, but specifies a group instead of a user. If 
     $ls -l test1
     -rw-rw-r-- 1 sally dev 0 Mar 15 16:04 test1
 
+#### Extended Attributes
 
+Extended Attributes associate metadata not interpreted by the filesystem with files. There are four **namespaces**: user, trusted, security, and system. The extended attributes here will focus on user space metadata.
+
+Flag values are stored in the file inode and may be modified and set by the root user. They are viewed with **lsattr** and set with **chattr**.
+
+| Flag | Meaning | Explanation |
+|:-----|:--------|:------------|
+| i | Immutable attribute | File cannot be modified. It cannot be deleted or renamed. No hard link can be created to it, and no data can be written to the file |
+| a | Append-only attribute | File can only be opened in append mode for writing |
+| d | No-dump attribute | File is ignored when the **dump** program is run. This is useful for swap and cache files that you don't want to back up |
+| A | No-atime-update attribute | File will not modify the access time record when the file is accessed but not modified. This reduces the amount of disk I/O on the system, and can improve performance |
+
+The syntax for **chattr** is:
+
+    $ chattr [+|-|=mode] filename
