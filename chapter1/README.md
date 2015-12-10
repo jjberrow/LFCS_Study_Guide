@@ -1,4 +1,4 @@
-[Go Back](../)
+[Go Back](../README.md)
 
 ### Chapter 1
 * [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
@@ -358,4 +358,4 @@ This could prove useful if you are working in multiple roles and want to be alwa
 
 `\u@\h $`
 
-[Go Back](../)
+[Go Back](../README.md)
