@@ -8,3 +8,5 @@ This is imperfect studying material. It is solely designed for assisting in brea
   * RAID
 * [Chapter 3](chapter3.md)
   * Encryption and swap
+* [Chapter 4](chapter4.md)
+  * File attributes
