@@ -368,6 +368,7 @@ This could prove useful if you are working in multiple roles and want to be alwa
 * [RAID Levels](#raid-levels)
 * [Software RAID Configuration](#software-raid-configuration)
 * [Monitoring RAIDs](#monitoring-raids)
+* [RAID Hot Spares](#raid-hot-spares)
 
 #### Introduction to RAID
 
@@ -463,3 +464,16 @@ mdmonitor will send an email to *example@email.com* when a problem occurs with a
 
 **On Ubuntu, the service is called mdadm instead of mdmonitor**
 
+#### RAID Hot Spares
+
+Since redundancy is one of the primary directives of RAID (excluding RAID0), a **hot spare** can be used.
+
+    $ sudo mdadm --create /dev/md0 -l 5 -n3 -x 1 /dev/sda8 /dev/sda9 /dev/sda10 /dev/sda11
+
+The **-x 1** switch tells mdadm to use one spare device.
+
+You can test the redundancy and hot spare of your array with:
+
+    $ sudo mdadm --fail /dev/md0 /dev/sdb2
+    $ sudo mdadm --remove /dev/md0 /dev/sdb2
+    $ sudo mdadm --add /dev/md0 /dev/sde2
