@@ -367,6 +367,7 @@ This could prove useful if you are working in multiple roles and want to be alwa
 * [Introduction to RAID](#introduction-to-raid)
 * [RAID Levels](#raid-levels)
 * [Software RAID Configuration](#software-raid-configuration)
+* [Monitoring RAIDs](#monitoring-raids)
 
 #### Introduction to RAID
 
@@ -444,3 +445,21 @@ You can examine /proc/mdstat to see the RAID status as in:
 To stop the RAID device, use:
 
     $ sudo mdadm -S /dev/md0
+
+#### Monitoring RAIDs
+
+You can monitor RAID a few ways:
+
+    $ sudo mdadm --detail /dev/md0
+    $ cat /proc/mdstat
+
+You can also use **mdmonitor** which requires appending an email address to /etc/mdadm.conf:
+
+    MAILADDR example@email.com
+
+mdmonitor will send an email to *example@email.com* when a problem occurs with a RAID device, such as when any of the arrays fail to start or fall into a degraded state. You can turn it on with:
+
+    $ sudo service mdmonitor start
+
+**On Ubuntu, the service is called mdadm instead of mdmonitor**
+
