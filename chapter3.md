@@ -5,6 +5,7 @@
 * [Using an Encrypted Partition](#using-an-encrypted-partition)
 * [Mounting at boot](#mounting-at-boot)
 * [Encrypting swap](#encrypting-swap)
+* [Swap](#swap)
 
 #### LUKS
 
@@ -91,3 +92,14 @@ Data written to the swap device can contain sensitive information, and as such i
   * Add an entry to /etc/fstab
 
     /dev/mapper/swapcrypt none swap defaults 0 0
+
+#### Swap
+
+Swap is how Linux employs virtual memory. Swapping typically takes place on one or more dedicated partitions or files. In most circumstances, the recommended swap size is double the size of the total RAM.
+
+The commands involving swap are:
+* **mkswap**: format a swap partition or file
+* **swapon**: activate a swap partition or file
+* **swapoff**: deactivate a swap partition or file
+
+
