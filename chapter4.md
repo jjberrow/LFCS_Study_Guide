@@ -4,6 +4,7 @@
 * [File Ownership](#file-ownership)
 * [File Permission Modes](#file-permission-modes)
 * [chown](#chown)
+* [chgrp](#chgrp)
 
 #### File Ownership
 
@@ -51,7 +52,7 @@ To achieve the same as above, you could do:
 
 #### chown
 
-Using chown is pretty straitforward. The syntax is as follows:
+Using chown is pretty straight-forward. The syntax is as follows:
 
     $ sudo chown [user]:[group] file
 
@@ -65,3 +66,16 @@ If we have a file owned by *bob* and we want to change the owner to *sally*, we 
     $ sudo chown sally test1
     $ ls -l test1
     -rw-rw-r-- 1 sally bob 0 Mar 15 16:04 test1
+
+#### chgrp
+
+chgrp is almost identical to chown, but specifies a group instead of a user. If we take the example above, and we have the user *phil* in the *dev* group along with *bob* and *sally*, and we want the three of them to have read/write permissions, we could do:
+
+    $ ls -l test1
+    -rw-rw-r-- 1 sally bob 0 Mar 15 16:04 test1
+
+    $ sudo chgrp dev test1
+    $ls -l test1
+    -rw-rw-r-- 1 sally dev 0 Mar 15 16:04 test1
+
+
