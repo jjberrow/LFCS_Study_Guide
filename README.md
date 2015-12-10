@@ -362,6 +362,7 @@ This could prove useful if you are working in multiple roles and want to be alwa
 ### Chapter 2
 * [Introduction to RAID](#introduction-to-raid)
 * [RAID Levels](#raid-levels)
+* [Software RAID Configuration](#software-raid-configuration)
 
 #### Introduction to RAID
 
@@ -414,3 +415,28 @@ For example:
 3. Format RAID device
 
     $ sudo mkfs.ext3 /dev/md0
+
+4. Add device to /etc/fstab
+
+    /dev/md0 /myraid ext4 defaults 0 2
+
+5. Mount RAID device
+
+    $ sudo mkdir /myraid
+    $ sudo mount /dev/md0 /myraid
+
+6. Capture RAID details to ensure persistence
+
+    $ sudo bash -c "mdadm --detail --scan >> /etc/mdadm.conf"
+
+You can examine /proc/mdstat to see the RAID status as in:
+
+    $ cat /proc/mdstat
+    Personalities : [raid1]
+    md0 : active raid1 sdb3[1] sdc3[0]
+    ---------- 521984 blocks [2/2]
+    unused devices: <none>
+
+To stop the RAID device, use:
+
+    $ sudo mdadm -S /dev/md0
