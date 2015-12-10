@@ -1,3 +1,5 @@
+[Go Back](#../)
+
 ### Chapter 1
 * [Creating Files Without Using an Editor](#creating-files-without-using-an-editor)
 * [sudo](#sudo)
@@ -355,3 +357,5 @@ The **PS1** variable is the character string that is displayed as the prompt on 
 This could prove useful if you are working in multiple roles and want to be always reminded of who you are and what machine you are on. The prompt above could be implemented by setting the PS1 variable to: 
 
 `\u@\h $`
+
+[Go Back](#../)
