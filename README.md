@@ -14,3 +14,5 @@ Much of this content has been collected from the Linux Foundation and the edX LF
   * File attributes
 * [Chapter 5](chapter5.md)
   * Finding files on the filesystem
+* [Chapter 6](chapter6.md)
+  * Filesystems
