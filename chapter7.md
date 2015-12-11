@@ -3,6 +3,7 @@
 ### Chapter 7
 * [Introduction to LVM](#introduction-to-lvm)
 * [LVM Utilities](#lvm-utilities)
+* [Resizing Logical Volumes](#resizing-logical-volumes)
 
 #### Introduction to LVM
 
@@ -62,5 +63,29 @@ The following is an example of the entire process of creating logical volumes, a
     $ sudo mkfs -t ext4 /dev/vol_group/log_vol
     $ sudo mkdir /mylvm
     $ sudo mount /dev/vol_group/log_vol /mylvm
+
+#### Resizing Logical Volumes
+
+One of the great advantages of using LVM is that it is easy and quick to change the size of a logical volume. Extents can be added or subtracted from the logical volume, and they can come from anywhere within the volume group.
+
+**NOTE: 
+When expanding a logical volume with an existing filesystem, the logical volume must be expanded, then the filesystem must be expanded.
+When shrinking a logical volume with an existing filesystem, the filesystem must be shrunk, then the logical volume must be shrunk.**
+
+The following is an example of expanding a logical volume:
+
+    $ sudo unmount /mylvm
+    $ sudo lvextend -L +500M /dev/vol_group/log_vol
+    $ sudo resize2fs /dev/vol_group/log_vol
+    $ sudo mount /dev/vol_group/log_vol
+
+and shrinking a logical volume:
+
+    $ sudo unmount /mylvm
+    $ sudo fsck -f /dev/vol_group/log_vol
+    $ sudo resize2fs /dev/vol_group/log_vol 200M
+    $ sudo lvreduce -L 200M /dev/vol_group/log_vol
+    $ sudo mount /dev/vol_group/log_vol
+
 
 [Go Back](README.md)
