@@ -102,4 +102,4 @@ The commands involving swap are:
 * **swapon**: activate a swap partition or file
 * **swapoff**: deactivate a swap partition or file
 
-
+[Go Back](README.md)

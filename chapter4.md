@@ -125,3 +125,5 @@ The example above will then output:
     $ ls -l | grep -e afile -e adir
     drwxr-xr-x 2 coop coop 4096 Sep 16 11:18 adir
     -rw-r--r-- 1 coop coop    0 Sep 16 11:18 afile
+
+[Go Back](README.md)
