@@ -6,6 +6,7 @@
 * [chown](#chown)
 * [chgrp](#chgrp)
 * [Extended Attributes](#extended-attributes)
+* [umask](#umask)
 
 #### File Ownership
 
@@ -95,3 +96,32 @@ Flag values are stored in the file inode and may be modified and set by the root
 The syntax for **chattr** is:
 
     $ chattr [+|-|=mode] filename
+
+#### umask
+
+The default permissions given to a file is 0666, and 0777 for a directory. Howevery, you may notice that when you perform the following, you get a different result:
+
+    $ touch afile
+    $ mkdir adir
+    $ ls -l | grep -e afile -e adir
+    drwxrwxr-x 2 coop coop 4096 Sep 16 11:18 adir
+    -rw-rw-r-- 1 coop coop    0 Sep 16 11:18 afile
+
+The permissions are actually 0664 for the file and 0775 for the directory. This is because they have been modified by **umask**. The current umask value can be shown:
+
+    $ umask
+    0002
+
+The value is combined with the permissions of the file to determine which permissions should be denied. In the case above:
+
+    0666 - 0002 = 0664; i.e. rw-rw-r--
+
+You can change the umask value using the umask command:
+
+    $ umask 0022
+
+The example above will then output:
+
+    $ ls -l | grep -e afile -e adir
+    drwxr-xr-x 2 coop coop 4096 Sep 16 11:18 adir
+    -rw-r--r-- 1 coop coop    0 Sep 16 11:18 afile
