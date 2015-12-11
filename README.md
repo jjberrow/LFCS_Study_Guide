@@ -16,3 +16,5 @@ Much of this content has been collected from the Linux Foundation and the edX LF
   * Finding files on the filesystem
 * [Chapter 6](chapter6.md)
   * Filesystems
+* [Chapter 7](chapter7.md)
+  * LVM

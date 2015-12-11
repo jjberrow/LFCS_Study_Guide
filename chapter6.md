@@ -69,3 +69,5 @@ For a client to have have access to NFS direcories, they will need to mount it:
 They can also update their */etc/fstab* file for mounting NFS persistently with something like:
 
     host.example.com:/projects	/projects	nfs	defaults	0 0
+
+[Go Back](README.md)
