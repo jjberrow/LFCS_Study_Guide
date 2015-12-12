@@ -4,6 +4,7 @@
 
 * [rsync](#rsync)
 * [Compressing Data](#compressing-data)
+* [Archiving Using tar](#archiving-using-tar)
 
 #### rsync
 
@@ -28,5 +29,14 @@ As disk space and network speed are both major concerns, file compression is qui
 
 In addition to the above, the **tar** utility is often used to group files in an archive prior to compressing them.
 
+#### Archiving Using tar
+
+**tar**, historically stood for "tape archive" and was used to archive files to a magnetic tape. It allows you to create or extract files from an archive file (tarball). The modern incarnation of tar can make use of compression utilities to compress the created tarball.
+
+| Command | Usage |
+|:--------|:------|
+| `$ tar xvf mydir.tar` | Extract all the files in mydir.tar into the mydir directory |
+| `$ tar zcvf mydir.tar.gz mydir` | Create the archive and compress with **gzip** |
+| `$ tar jcvf mydir.tar.bz2 mydir` | Create the archive and compress with **bz2** |
 
 [Go Back](README.md)
