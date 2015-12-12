@@ -18,3 +18,5 @@ Much of this content has been collected from the Linux Foundation and the edX LF
   * Filesystems
 * [Chapter 7](chapter7.md)
   * LVM
+* [Chapter 8](chapter8.md)
+  * Backups
