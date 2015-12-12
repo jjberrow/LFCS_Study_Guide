@@ -5,6 +5,7 @@
 * [rsync](#rsync)
 * [Compressing Data](#compressing-data)
 * [Archiving Using tar](#archiving-using-tar)
+* [Disk-to-Disk Copying](#disk-to-disk-copying)
 
 #### rsync
 
@@ -38,5 +39,17 @@ In addition to the above, the **tar** utility is often used to group files in an
 | `$ tar xvf mydir.tar` | Extract all the files in mydir.tar into the mydir directory |
 | `$ tar zcvf mydir.tar.gz mydir` | Create the archive and compress with **gzip** |
 | `$ tar jcvf mydir.tar.bz2 mydir` | Create the archive and compress with **bz2** |
+
+#### Disk-to-Disk Copying
+
+The **dd** program is very useful for making copies of raw disk space. For example, to back up your MBR, you could enter:
+
+     # dd if/dev/sda of=sda.mbr bs=512 count=1
+
+You could also make a complete copy of one disk onto another:
+
+    # dd if=/dev/sda of=/dev/sdb
+
+A common joke with dd is that is stands for **data destroyer**, so it should be noted that its a very dangerous utility.
 
 [Go Back](README.md)
