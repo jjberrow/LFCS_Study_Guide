@@ -3,6 +3,7 @@
 ### Chapter 8
 
 * [rsync](#rsync)
+* [Compressing Data](#compressing-data)
 
 #### rsync
 
@@ -14,6 +15,18 @@ It should be noted that rsync can be very destructive. As such, it is highly rec
 
     $ rsync -dry-run -r project myarchive.example.com:archives/project
 
+#### Compressing Data
+
+As disk space and network speed are both major concerns, file compression is quite useful. The following is a table outlining some of the more common compression utilities:
+
+| Command | Usage |
+|:--------|:------|
+| gzip | The most frequently used Linux compression utility |
+| bzip2 | Produces files significantly smaller than those produced by gzip |
+| xz | The most space efficient compression utility used in Linux |
+| zip | Not common with Linux except for examining/decompressing archives from other OSes |
+
+In addition to the above, the **tar** utility is often used to group files in an archive prior to compressing them.
 
 
 [Go Back](README.md)
