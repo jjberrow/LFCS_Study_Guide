@@ -46,29 +46,29 @@ The steps in configuring software RAID are:
 
 For example:
 
-1. Create partitions on each disk
+Create partitions on each disk
 
     $ sudo fdisk /dev/sdb
     $ sudo fdisk /dev/sdc
 
-2. Create RAID device with mdadm
+Create RAID device with mdadm
 
     $ sudo mdadm --create /dev/md0 --level=1 --raid-disks=2 /dev/sdb3 /dev/sdc3
 
-3. Format RAID device
+Format RAID device
 
     $ sudo mkfs.ext3 /dev/md0
 
-4. Add device to /etc/fstab
+Add device to /etc/fstab
 
     /dev/md0 /myraid ext4 defaults 0 2
 
-5. Mount RAID device
+Mount RAID device
 
     $ sudo mkdir /myraid
     $ sudo mount /dev/md0 /myraid
 
-6. Capture RAID details to ensure persistence
+Capture RAID details to ensure persistence
 
     $ sudo bash -c "mdadm --detail --scan >> /etc/mdadm.conf"
 
