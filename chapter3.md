@@ -62,34 +62,36 @@ Typically, the entry will look something like:
 
 Data written to the swap device can contain sensitive information, and as such it is important to consider security. The following steps will explain the process of encrypting a swap partition.
 
-1. Find out the partition that is currently being used for swap, then deactivate it:
+Find out the partition that is currently being used for swap, then deactivate it:
 
     $ cat /proc/swaps
+
     Filename							Type			Size		Used		Priority
     /dev/sda2							parition	4193776	0				-1
 
     $ sudo swapoff /dev/sda2
 
-2. Format and make the volume available:
+Format and make the volume available:
 
     $ sudo cryptsetup luksFormat /dev/sda2
     $ sudo cryptsetup luksOpen /dev/sda2 swapcrypt
 
-3. Format the encrypted device:
+Format the encrypted device:
 
     $ sudo mkswap /dev/mapper/swapcrypt
 
-4. Now test to see that it works:
+Now test to see that it works:
 
     $ sudo swapon /dev/mapper/swapcrypt
     $ cat /proc/swaps
 
-5. Activate the swappartition on boot
-  * Add a line to /etc/crypttab
+Activate the swap partition on boot
+
+Add a line to /etc/crypttab
 
     swapcrypt /dev/sda2 /dev/urandom swap,cipher=aes-cbc-essiv:sha256,size=256
 
-  * Add an entry to /etc/fstab
+Add an entry to /etc/fstab
 
     /dev/mapper/swapcrypt none swap defaults 0 0
 
