@@ -87,5 +87,6 @@ and shrinking a logical volume:
     $ sudo lvreduce -L 200M /dev/vol_group/log_vol
     $ sudo mount /dev/vol_group/log_vol
 
+You can also skip the **resize2fs** step by using the **-r** flag.
 
 [Go Back](README.md)
