@@ -2,6 +2,7 @@
 
 ### Chapter 9
 * [User Accounts](#user-accounts)
+* [useradd](#useradd)
 
 #### User Accounts
 
@@ -30,6 +31,41 @@ The elements here are:
 * **Home directory**: For most users, this is a unique directory that offers a working area for the user. Normally, this directory is owned by the user.
 * **Login shell**: Normally, this is a shell program such as */bin/bash* or  */bin/csh*. Sometimes, however, an alternative program is referenced here for special cases. In general, this field will accept any executable.
 
+#### useradd
+
+The command:
+
+    $ sudo useradd hugo
+
+will create an account for user **hugo**, using default algorithms for assigning UID, GID, home directory and shell.
+
+Specifically, the **useradd** command above causes the following steps to execute:
+
+* The next available **UID** greater than UID_MIN (specified in */etc/login.defs*) by default is assigned as hugo's UID.
+* A group called **hugo** with **GID=UID** is also created and assigned as hugo's primary group.
+* A home directory **/home/hugo** is created and owned by **hugo**.
+* hugo's login shell will be */bin/bash*.
+* The contents of */etc/skel* is copied to */home/hugo*. By default, */etc/skel* includes startup files for bash and for the **X Window** system.
+* An entry of either **!!** or **!** is placed in the password field of the */etc/shadow* file for hugo's entry, thus requiring the administrator to assign a password for the acount to be usable.
+
+The defaults can easily be overruled by using the options available:
+
+* **b**: specify the base directory
+* **c**: add GECOS field
+* **e**: set an expiration date for the account
+* **g**: set the primary group of user
+* **G**: set the supplimentary group(s) of user
+* **k**: set alternative skel directory
+* **M**: do not create the user's home directory
+* **N**: do not create a group with the same name as the user
+* **p**: set password for user
+* **r**: create a system account
+* **s**: set login shell
+* **u**: set UID
+
+All of these options can be found with:
+
+    useradd --help
 
 
 
