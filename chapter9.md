@@ -3,6 +3,7 @@
 ### Chapter 9
 * [User Accounts](#user-accounts)
 * [useradd](#useradd)
+* [Groups](#groups)
 
 #### User Accounts
 
@@ -67,6 +68,25 @@ All of these options can be found with:
 
     useradd --help
 
+#### Groups
 
+User belong to one or more groups. The purpose of this is to:
+
+* Allow users to share a work area.
+* Setting up file permissions to allow access to group members, but not the entire world.
+* Permitting certain specified users to access resources they would not be allowed to otherwise.
+
+As users are defined in */etc/passwd*, groups are defined in */etc/group*. Each line looks like:
+
+    oceanic:x:815:jshep,kausten,sunkwon
+
+where the elements are:
+
+* **Group name**: name of the group
+* **Password**: Password placeholder. Typically this is not set, but may be if the */etc/gshadow* file exists.
+* **GID**: Group identifier. Values between 100 and GID_MIN are considered special. Values over 1000 are for **User Private Groups**.
+* **User list**: Comma-separated list of users who are members of ther group.
+
+The **chgrp** command can be used to modify the group of a file when you want to only change the group and not the user as well. Otherwise, you can user chown and specify the group as well as the user.
 
 [Go Back](README.md)
