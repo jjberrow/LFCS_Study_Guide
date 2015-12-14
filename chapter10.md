@@ -1,7 +1,7 @@
 [Go Back](README.md)
 
 ### Chapter 10
-* [Process Types](#process-types)
+* [Process Types and Priorities](#process-types-and-priorities)
 * [Process Commands](#process-commands)
 
 #### Process Types
@@ -15,6 +15,10 @@ Processes can be of different types according to the task being performed.
 | Daemons | Sever processes that run continuously. Many are launched during system startup and then wait for a user or system request indicating that their service is required. | httpd, sshd, mysqld |
 | Threads | Lightweight processes that are run under the umbrella of a main process, sharing memory and other resources, but are scheduled and run by the system on an individual basis. An individual thread can end without terminating the whole process and a process can create new threads at any time. Many non-trivial programs are multi-threaded. | gnome-terminal, firefox |
 | Kernel Threads | Kernel tasks that users neither start nor terminate and have little control over. These may perform actions like moving a thread from one CPU to another, or making sure I/O operations to disk are completed. | kswapd0, migration, ksoftirqd |
+
+At any given time, many processes are running on the system. As a CPU can only perform one task at a time, process priority comes into play. Higher priority processes are granted more time on the CPU.
+
+The priority for a process can be set by specifying a process' **niceness**. The lower the niceness, the higher the priority. Low values are assigned to important processes, which high values are assigned to processes that are less important. A set niceness of -20 represents the highest priority, and 19 represents the lowest.
 
 #### Process Commands
 
