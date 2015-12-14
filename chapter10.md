@@ -39,7 +39,7 @@ Without options, ps will display all processes running under the current shell. 
 
 Another way to monitor processes is to use the **top** command. The following is an example of the output:
 
-[top command](http://i.imgur.com/q2Shh6F.png)
+![top command](http://i.imgur.com/q2Shh6F.png)
 
 While this image seems complex, we can break it down into much smaller chunks to understand its content.
 
