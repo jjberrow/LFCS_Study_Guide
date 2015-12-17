@@ -49,7 +49,7 @@ Both techniques will produce this file:
 
 #### sudo
 
-*sudo* allows users to run programs using the secuirty privileges of another user, genrally root (superuser). 
+**sudo** allows users to run programs using the secuirty privileges of another user, genrally root (superuser). 
 
 If your system does not already have sudo set up and enabled, you need to do the following steps:
 * As the superuser, create a configuration file to enable the user account to use sudo. Typically, this file is created in the `/etc/sudoers.d/` directory with the name of the file the same as the username. For example, let's say the username is "student". You can create the configuration file for "student" by doing this:
